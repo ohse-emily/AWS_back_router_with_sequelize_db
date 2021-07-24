@@ -14,12 +14,13 @@ router.get('/',async(req,res,next)=>{
 
 router.post('/',async(req,res,next)=>{
     const {userid,content} = req.body
+    console.log(userid,content)
     try{
         const data = await Comment.create({
             userid,
             content
         })
-
+        console.log(data,'ddddddd')
         res.json(data)
     } catch (error) {
         console.error(error)
